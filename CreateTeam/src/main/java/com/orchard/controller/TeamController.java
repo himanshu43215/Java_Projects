@@ -16,34 +16,32 @@ import com.orchard.service.TeamService;
 
 @RestController
 @CrossOrigin(origins="*")
-public class teamController {
+public class TeamController {
  
 	@Autowired
 	private TeamService teamService;
 	
-	@PostMapping("/createTeam")
-	
+	@PostMapping("/createteam")
 	public Team saveTeam(@RequestBody Team team) throws Exception {
 		 
 		String tempTeam=team.getTeamName();
 		
-		if(tempTeam!=null && !"".equals(tempTeam)) {
-		 Team userobj=teamService.fetchByTeamName(tempTeam);
+		if(tempTeam != null && !"".equals(tempTeam)) {
+		 Team userobj = teamService.fetchByTeamName(tempTeam);
 		 if(userobj!=null) {
 			 throw new Exception("user with "+team.getTeamName()+ " is already exist"); 
 		 }
 		}
 		return teamService.saveTeam(team);
 	}
-	@GetMapping("/getBudget/{name}")
+
+	@GetMapping("/getbudget/{name}")
 	public Double getMaximumBudgetByTeamName(@PathVariable ("name") String teamName) {
 		return teamService.getMaximumBudgetByTeamName(teamName);
 	}
-	@GetMapping("/getTeam")
-	
+
+	@GetMapping("/getteam")
 	public List<String> getAllTeamName(){
 		return teamService.getAllTeamName();
 	}
-	
-	
 }
