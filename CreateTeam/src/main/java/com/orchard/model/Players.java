@@ -1,6 +1,6 @@
 package com.orchard.model;
 
-public class players {
+public class Players {
 
 	private Long playerId;
 	private String playerName;
@@ -8,12 +8,12 @@ public class players {
 	private double biddingBudget;
 	
 	
-	public players() {
+	public Players() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public players(Long playerId, String playerName, String teamName, double biddingBudget) {
+	public Players(Long playerId, String playerName, String teamName, double biddingBudget) {
 		super();
 		this.playerId = playerId;
 		this.playerName = playerName;

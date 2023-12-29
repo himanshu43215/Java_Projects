@@ -16,7 +16,7 @@ import com.orchard.service.TeamService;
 
 @RestController
 @CrossOrigin(origins="*")
-public class teamController {
+public class TeamController {
  
 	@Autowired
 	private TeamService teamService;
